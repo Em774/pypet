@@ -33,7 +33,7 @@ py_dog = {
 
 terminate = False
 
-pypet = py_dog
+pypet = ""
 
 os.system("say 'Welcome to Py pet! Choose the pet you want to play with.'")
 
@@ -79,10 +79,14 @@ while not terminate:
             print bcolors.OKBLUE + "NO WAY, let me die overweight in peace!"
 
     elif input == "exercise":
-        if pypet['weight'] <= 1:
-            print bcolors.OKBLUE + "I am DEAD, you killed me, you cat KILLER!! What is wrong with you?"
+        if pypet == py_dog:
+            if pypet['weight'] <= 1:
+                print bcolors.OKBLUE + "I am DEAD, you killed me, you dog KILLER!! What is wrong with you?"
+        elif pypet == py_cat:
+            if pypet['weight'] <= 1:
+                print bcolors.OKBLUE + "I am DEAD, you killed me, you cat KILLER!! What is wrong with you?"
         if pypet['weight'] <= 7:
-            pypet['weight'] = pypet['weight'] - 1.5
+            pypet['weight'] = pypet['weight'] - 2.5
             lost = 1.5
             print bcolors.OKBLUE + "Yes!! I lost "+ str(lost) + "kg"
             print bcolors.OKBLUE + "My weight is now " + str(pypet['weight']) + "kg."
